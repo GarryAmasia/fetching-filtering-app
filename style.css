@@ -1,3 +1,4 @@
+/* ++++++++++GENERAL+++++++++++++++ */
 * {
   padding: 0;
   margin: 0;
@@ -26,6 +27,30 @@ li {
   max-width: 1000px;
   margin: 0 auto;
   padding: 16px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.m-10 {
+  margin: 10px;
+}
+
+.m-20 {
+  margin: 20px;
+}
+
+.m-30 {
+  margin: 30px;
 }
 
 /* ++++++++++NAVIGATION+++++++++++++++ */
@@ -60,6 +85,7 @@ li {
   max-width: 500px;
   margin: 24px auto;
   text-align: center;
+  /* background-color: red; */
 }
 
 .search__title {
@@ -119,7 +145,7 @@ input[type="submit"]:hover {
 .filter__container {
   position: relative;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .slide__container {
@@ -161,22 +187,87 @@ input[type="submit"]:hover {
   /* background-color: lightblue; */
 }
 
-/* google chrome */
-/* .slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  background: red;
-  border-radius: 50%;
-  cursor: pointer;
-} */
+.select__container select {
+  width: 100%;
+}
 
-/* firefox */
-/* .slider::-moz-range-thumb {
-  width: 40px;
-  height: 40px;
-  background: red;
-  border-radius: 50%;
-  cursor: pointer;
-} */
+/* ++++++++++++FILTER-SELECT FEATURES++++++++++++++ */
+
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  padding: 10px;
+  background-color: cyan;
+}
+
+.product {
+  width: 30%;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.image__container {
+  width: 100%;
+}
+
+.image__container img {
+  width: 100%;
+}
+
+/* media queries-----TABLET */
+@media (max-width: 768px) {
+  .main {
+    justify-content: space-between;
+  }
+
+  .product {
+    width: 45%;
+  }
+}
+
+/* media queries-----PHONE */
+@media (max-width: 550px) {
+  .product {
+    width: 100%;
+  }
+}
+
+/* media queries-----SMALL PHONE */
+
+@media (max-width: 500px) {
+  input[type="text"] {
+    /* background: red; */
+    background-color: rgba(222, 222, 222, 0.499);
+    width: 200px;
+    height: 30px;
+    border: none;
+    padding: 0 15px;
+    border-radius: 25px 0 0 25px;
+  }
+
+  input[type="text"]::placeholder {
+    font-size: 12px;
+  }
+
+  input[type="text"]:focus {
+    outline: none;
+    border: none;
+  }
+
+  input[type="submit"] {
+    position: relative;
+    top: -3px;
+    left: -5px;
+    border-radius: 0 25px 25px 0;
+    width: 70px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(255, 86, 2);
+    color: white;
+    transition: all 300ms ease;
+    font-size: 12px;
+  }
+}
