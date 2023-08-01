@@ -237,6 +237,11 @@ input[type="submit"]:hover {
 /* media queries-----SMALL PHONE */
 
 @media (max-width: 500px) {
+  .logo {
+    width: 70px;
+    height: 35px;
+  }
+
   input[type="text"] {
     /* background: red; */
     background-color: rgba(222, 222, 222, 0.499);
