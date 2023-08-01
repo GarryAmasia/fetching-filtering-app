@@ -192,7 +192,7 @@ input[type="submit"]:hover {
   width: 100%;
 }
 
-/* ++++++++++++FILTER-SELECT FEATURES++++++++++++++ */
+/* ++++++++++++PRODUCTS FEATURES++++++++++++++ */
 
 .main {
   width: 100%;
@@ -201,6 +201,7 @@ input[type="submit"]:hover {
   flex-wrap: wrap;
   padding: 10px;
   /* background-color: cyan; */
+  /* position: relative; */
 }
 
 .product {
@@ -229,6 +230,21 @@ input[type="submit"]:hover {
 
 .product__details span {
   color: rgba(0, 0, 0, 0.696);
+}
+/* ++++++++++++SPINNER FEATURES++++++++++++++ */
+
+.spinner {
+  text-align: center;
+  display: none;
+}
+
+.wrapper__loading .loading__spinner {
+  display: block;
+}
+
+.fa-cog {
+  font-size: 32px;
+  color: rgb(45, 152, 3);
 }
 
 /* media queries-----TABLET */

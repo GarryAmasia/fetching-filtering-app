@@ -11,6 +11,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/fec710c91b.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="script.js" defer></script>
     <title>E-commerce project</title>
   </head>
@@ -30,16 +34,24 @@
           </ul>
         </div>
         <div class="search">
-          <h3 class=" search__title text__gray">Browse our products</h1>
-            <form action="">
-                <input class="input" type="text" name="" placeholder="Browse...">
-                <input type="submit" name="" value="search">
-            </form>
+          <h3 class="search__title text__gray">Browse our products</h3>
+          <form action="">
+            <input class="input" type="text" name="" placeholder="Browse..." />
+            <input type="submit" name="" value="search" />
+          </form>
         </div>
         <div id="filter">
           <div class="filter__container">
             <div class="slide__container">
-              <input type="range" min="0" max="1000" value="500" id="myRange" class="slider" oninput="onChange(event)">
+              <input
+                type="range"
+                min="0"
+                max="1000"
+                value="500"
+                id="myRange"
+                class="slider"
+                oninput="onChange(event)"
+              />
               <p>Price: $ <span id="value"></span> AUD</p>
             </div>
             <div class="select__container">
@@ -51,23 +63,11 @@
             </div>
           </div>
         </div>
-        <div class="main">
-          <!-- <div class="product m-10">
-            <figure class="image__container">
-              <img src="./assets/bag.jpeg" alt="">
-            </figure>
-            <div class="product__details">
-              <p>ID: <span class="product__details--id">1</span></p>
-              <p>Title: <span class="product__details--title">iPhone</span></p>
-              <p>Description: <span class="product__details--description">An apple mobile which is nothing like apple</span> </p>
-              <p>Price:$ <span class="product__details--price">549</span></p>
-              <p>Promo: <span class="product__details--discounted-percentage">12.96</span> %</p>
-              <p>Rating: <span class="product__details--rating">4.65</span></p>
-              <p>Available: <span class="product__details--stock">94</span> units</p>
-              <p>Brand: <span class="product__details--brand">Apple</span></p>
-              <p>Category: <span class="product__details--category">Smartphones</span></p>
-            </div>
-          </div>  -->
+        <div class="wrapper wrapper__loading">
+          <div class="spinner loading__spinner">
+            <i class="fas fa-cog fa-spin"></i>
+          </div>
+          <div class="main"></div>
         </div>
       </div>
     </div>
