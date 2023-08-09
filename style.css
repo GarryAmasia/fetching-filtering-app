@@ -167,7 +167,7 @@ input[type="submit"]:hover {
 }
 
 .slider::after {
-  content: "$1000";
+  content: "$2000";
   font-size: 12px;
   position: absolute;
   top: 110%;

@@ -2,6 +2,8 @@
 const main = document.querySelector(".main");
 const wrapper = document.querySelector(".wrapper");
 
+const form = document.getElementById("form");
+
 // ========================================================
 let slider = document.getElementById("myRange");
 let output = document.getElementById("value");
@@ -12,6 +14,7 @@ output.innerHTML = slider.value;
 //fetching data
 let data;
 let products;
+let productsHTML;
 const fetchData = async (filter) => {
   wrapper.classList += " wrapper__loading";
   if (!products) {
@@ -22,24 +25,45 @@ const fetchData = async (filter) => {
     //   return (main.innerHTML += renderProducts(product));
     // });
   }
-  console.log(products);
+  wrapper.classList.remove("wrapper__loading");
+  // console.log(products);
 
-  // if (filter === "price_low_to_high") {
-  //   console.log(products);
-  //   products.sort((a, b) => b.price - a.price);
-  // }
+  if (filter === "price_low_to_high") {
+    console.log(products);
+    products.sort((a, b) => a.price - b.price);
+  } else if (filter === "price_high_to_low") {
+    products.sort((a, b) => b.price - a.price);
+  } else if (filter) {
+    const items = products.filter((product) => {
+      return product.price > 0 && product.price < filter;
+    });
+    console.log(items);
+    let result = items
+      .map((item) => {
+        return renderProducts(item);
+      })
+      .join("");
+    // console.log(productsHTML);
+    return (main.innerHTML = result);
+  }
 
-  products.map((product) => {
-    return (main.innerHTML += renderProducts(product));
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const productInput = document.querySelector(".input");
+
+    const { value } = productInput;
+    console.log(value);
+    console.log(products);
   });
 
-  wrapper.classList.remove("wrapper__loading");
+  productsHTML = products
+    .map((product) => {
+      return renderProducts(product);
+    })
+    .join("");
 
-  // if (filter === "price_low_to_high") {
-  //   products.sort((a, b) => {
-  //     return a.price - b.price;
-  //   });
-  // }
+  // console.log(productsHTML);
+  main.innerHTML = productsHTML;
 };
 // console.log(products);
 
@@ -69,9 +93,10 @@ const optionPicked = (e) => {
   fetchData(selectedOption);
 };
 
-const onChange = (e) => {
+const onChangeSlider = (e) => {
   const price = e.target.value;
   output.innerHTML = price;
+  fetchData(price);
 };
 
 fetchData();

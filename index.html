@@ -35,8 +35,13 @@
         </div>
         <div class="search">
           <h3 class="search__title text__gray">Browse our products</h3>
-          <form action="">
-            <input class="input" type="text" name="" placeholder="Browse..." />
+          <form action="" id="form" name="form">
+            <input
+              class="input"
+              type="text"
+              name="product"
+              placeholder="Browse..."
+            />
             <input type="submit" name="" value="search" />
           </form>
         </div>
@@ -46,11 +51,12 @@
               <input
                 type="range"
                 min="0"
-                max="1000"
-                value="500"
+                max="2000"
+                value="50"
                 id="myRange"
                 class="slider"
-                oninput="onChange(event)"
+                step="5"
+                onchange="onChangeSlider(event)"
               />
               <p>Price: $ <span id="value"></span> AUD</p>
             </div>
