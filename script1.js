@@ -103,7 +103,7 @@ const onSubmit = (e) => {
   const result = products.filter(
     (product) =>
       product.category.includes(value) ||
-      product.title.toLowerCase().includes(value)
+      product.title.toLowerCase().includes(value.toLowerCase())
   );
   console.log(result);
   productsHTML = result
