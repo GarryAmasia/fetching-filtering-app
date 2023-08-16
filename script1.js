@@ -99,7 +99,12 @@ const onSubmit = (e) => {
 
   const { value } = productInput;
   console.log(value);
-  const result = products.filter((product) => product.category.includes(value));
+  console.log(typeof value);
+  const result = products.filter(
+    (product) =>
+      product.category.includes(value) ||
+      product.title.toLowerCase().includes(value)
+  );
   console.log(result);
   productsHTML = result
     .map((item) => {
