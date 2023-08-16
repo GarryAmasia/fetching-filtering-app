@@ -106,12 +106,18 @@ const onSubmit = (e) => {
       product.title.toLowerCase().includes(value.toLowerCase())
   );
   console.log(result);
-  productsHTML = result
-    .map((item) => {
-      return renderProducts(item);
-    })
-    .join("");
-  main.innerHTML = productsHTML;
+
+  if (result.length === 0) {
+    main.innerHTML = `<div class="no__product">Products -<span class="value">${value}</span>- not found here</div>`;
+  } else {
+    productsHTML = result
+      .map((item) => {
+        return renderProducts(item);
+      })
+      .join("");
+    //   console.log(productsHTML);
+    main.innerHTML = productsHTML;
+  }
 };
 
 fetchData();

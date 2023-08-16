@@ -198,6 +198,15 @@ input[type="submit"]:hover {
 
 /* ++++++++++++PRODUCTS FEATURES++++++++++++++ */
 
+.no__product {
+  color: rgb(255, 86, 2);
+  font-size: 16px;
+}
+
+.value {
+  color: black;
+}
+
 .main {
   width: 100%;
   display: flex;
