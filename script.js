@@ -90,7 +90,8 @@ const optionPicked = (e) => {
   // console.log(e.target.value);
   const selectedOption = e.target.value;
   // console.log(selectedOption);
-  fetchData(selectedOption);
+  // fetchData(selectedOption);
+  console.log(products);
 };
 
 const onChangeSlider = (e) => {
@@ -98,5 +99,7 @@ const onChangeSlider = (e) => {
   output.innerHTML = price;
   fetchData(price);
 };
+
+// console.log(products);
 
 fetchData();
